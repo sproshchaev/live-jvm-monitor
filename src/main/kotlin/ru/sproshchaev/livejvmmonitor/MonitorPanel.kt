@@ -133,9 +133,16 @@ private class MonitorChart(private val session: MonitorSession) : JComponent() {
             g.draw(path)
         }
 
-        g.color = UIUtil.getContextHelpForeground()
         val scale = if (top >= 10) "%.0f %s".format(top, unit) else "%.1f %s".format(top, unit)
-        g.drawString(scale, plot.x + pad, plot.y + metrics.ascent + JBUI.scale(2))
+        val scaleBaseline = plot.y + metrics.ascent + JBUI.scale(2)
+        // Подложка под подписью: линия на уровне верха шкалы не перечеркивает текст.
+        g.color = UIUtil.getPanelBackground()
+        g.fillRect(
+            plot.x + pad - JBUI.scale(2), scaleBaseline - metrics.ascent,
+            metrics.stringWidth(scale) + JBUI.scale(4), metrics.height,
+        )
+        g.color = UIUtil.getContextHelpForeground()
+        g.drawString(scale, plot.x + pad, scaleBaseline)
 
         g.color = UIUtil.getLabelForeground()
         g.drawString(title, box.x + pad, titleBaseline)

@@ -1,13 +1,28 @@
 <idea-plugin>
     <id>ru.sproshchaev.livejvmmonitor</id>
     <name>Live JVM Monitor</name>
-    <vendor>Sergey Proshchaev</vendor>
+    <vendor url="https://prosoft.pages.dev">Sergey Proshchaev</vendor>
 
     <description><![CDATA[
-    Live CPU, heap and thread charts for Java processes started from run configurations.
-    The plugin attaches to the started JVM (or to the JVM forked by Maven) through the Attach API
-    and reads platform MXBeans once per second. Works without an Ultimate subscription.
+    <p>Live CPU, heap and thread charts for the Java application you start from a run configuration.
+    Works in IntelliJ IDEA without an Ultimate subscription.</p>
+    <ul>
+      <li>A <b>JVM Monitor</b> tab opens at the bottom as soon as the plugin connects to the application JVM.</li>
+      <li>CPU load of the process, used and committed heap, live thread count, sampled once per second.</li>
+      <li>The last two minutes of history, with labeled scales.</li>
+      <li>Finds the application JVM forked by Maven, not only the process started by the IDE.</li>
+    </ul>
+    <p>The plugin connects through the standard Attach API and reads platform MXBeans.
+    No agent and no changes to your run configuration are needed.</p>
+    <p>Tested on macOS and Windows. The Gradle <code>bootRun</code> task is not supported yet:
+    its JVM runs inside the Gradle daemon.</p>
+    <p><a href="https://github.com/sproshchaev/live-jvm-monitor">Source code</a></p>
     ]]></description>
+
+    <change-notes><![CDATA[
+    <p>0.2.0: first public release. Plugin icon, Marketplace description, the scale label is no longer crossed by the chart line.</p>
+    <p>0.1.1: labeled scales, headroom above the peak, CPU scale steps from 1% to 100%.</p>
+    ]]></change-notes>
 
     <depends>com.intellij.modules.platform</depends>
 

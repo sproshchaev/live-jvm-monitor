@@ -14,7 +14,7 @@ An IntelliJ IDEA plugin that draws live CPU, heap and thread charts for the Java
 
 ## 1. Requirements
 
-- IntelliJ IDEA 2025.2 or newer (build 252+), Community, free mode or Ultimate. Tested on 2026.2.3.
+- IntelliJ IDEA 2025.1 or newer (build 251+), Community, free mode or Ultimate, and IDEs built on it such as GigaIDE. Tested on IntelliJ IDEA 2026.2.3 (macOS), IntelliJ IDEA 2025.3.2 and GigaIDE 2025.1 (Windows).
 - JDK 21 to build the plugin. The IDE runtime (JBR) already ships `jdk.attach` and `java.management`.
 
 ## 2. Quick start
@@ -51,7 +51,7 @@ The build compiles against a locally installed IDE. Set its path in `localIdePat
 
 ## 5. Versions
 
-Kotlin 2.4.10 (IDE 2026.2 bundles 2.4.0), IntelliJ Platform Gradle Plugin 2.19.0, Gradle 9.8.2, `sinceBuild` 252.
+Kotlin 2.4.10 (IDE 2026.2 bundles 2.4.0), IntelliJ Platform Gradle Plugin 2.19.0, Gradle 9.8.2, `sinceBuild` 251, Kotlin API 2.1 to match the stdlib of IDE 2025.1.
 
 ## 6. License
 

@@ -14,7 +14,7 @@
 
 ## 1. Требования
 
-- IntelliJ IDEA 2025.2 и новее (сборка 252+): Community, бесплатный режим или Ultimate. Проверено на 2026.2.3.
+- IntelliJ IDEA 2025.1 и новее (сборка 251+): Community, бесплатный режим или Ultimate, а также IDE на ее основе, например GigaIDE. Проверено на IntelliJ IDEA 2026.2.3 (macOS), IntelliJ IDEA 2025.3.2 и GigaIDE 2025.1 (Windows).
 - JDK 21 для сборки плагина. В среде выполнения IDE (JBR) модули `jdk.attach` и `java.management` уже есть.
 
 ## 2. Быстрый старт
@@ -51,7 +51,7 @@ Zip появится в `build/distributions/`. Установка в IDE: Setti
 
 ## 5. Версии
 
-Kotlin 2.4.10 (в IDE 2026.2 встроен 2.4.0), IntelliJ Platform Gradle Plugin 2.19.0, Gradle 9.8.2, `sinceBuild` 252.
+Kotlin 2.4.10 (в IDE 2026.2 встроен 2.4.0), IntelliJ Platform Gradle Plugin 2.19.0, Gradle 9.8.2, `sinceBuild` 251, API Kotlin 2.1 под stdlib IDE 2025.1.
 
 ## 6. Лицензия
 
