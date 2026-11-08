@@ -1,0 +1,25 @@
+<idea-plugin>
+    <id>ru.sproshchaev.livejvmmonitor</id>
+    <name>Live JVM Monitor</name>
+    <vendor>Sergey Proshchaev</vendor>
+
+    <description><![CDATA[
+    Live CPU, heap and thread charts for Java processes started from run configurations.
+    The plugin attaches to the started JVM (or to the JVM forked by Maven) through the Attach API
+    and reads platform MXBeans once per second. Works without an Ultimate subscription.
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="JVM Monitor"
+                    anchor="bottom"
+                    icon="/icons/jvmMonitor.svg"
+                    factoryClass="ru.sproshchaev.livejvmmonitor.MonitorToolWindowFactory"/>
+    </extensions>
+
+    <projectListeners>
+        <listener class="ru.sproshchaev.livejvmmonitor.MonitorRunListener"
+                  topic="com.intellij.execution.ExecutionListener"/>
+    </projectListeners>
+</idea-plugin>
